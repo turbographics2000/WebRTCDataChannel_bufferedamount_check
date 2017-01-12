@@ -136,7 +136,7 @@ function sendGeneratedData() {
       }
       sendProgress.value += chunkSize;
       sendChannel.send(stringToSendRepeatedly);
-      bufferedAmountSeries.addPoint(now, sendChannel.bufferedAmount);
+      bufferedAmountSeries.addPoint(new Date(), sendChannel.bufferedAmount);
       bufferedAmountGraph.setDataSeries([bufferedAmountSeries]);
       bufferedAmountGraph.updateEndDate();
     }
