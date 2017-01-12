@@ -285,4 +285,7 @@ div.graph-container {
   margin: 0.5em;
   width: 300px;
   height: 150px;
+  position: absolute;
+  left: 328px;
+  top: -63px;
 }
