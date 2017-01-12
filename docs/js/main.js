@@ -20,7 +20,7 @@ var sendProgress = document.querySelector('progress#sendProgress');
 var receiveProgress = document.querySelector('progress#receiveProgress');
 var errorMessage = document.querySelector('div#errorMsg');
 var bufferedAmountSeries = new TimelineDataSeries();
-var bufferedAmountGraph = new TimelineGraphView('bufferedAmountGraph', 'bufferedAmmountCanvas');
+var bufferedAmountGraph = new TimelineGraphView('bufferedAmountGraph', 'bufferedAmountCanvas');
 bufferedAmountGraph.updateEndDate();
 var receivedSize = 0;
 var bytesToSend = 0;
