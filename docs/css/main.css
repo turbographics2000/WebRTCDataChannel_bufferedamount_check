@@ -279,3 +279,9 @@ div.input {
 progress {
   width: calc(100% - 8.5em);
 }
+
+div.graph-container {
+  float: left;
+  margin: 0.5em;
+  width: calc(50% - 1em);
+}
