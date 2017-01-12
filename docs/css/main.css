@@ -283,5 +283,6 @@ progress {
 div.graph-container {
   float: left;
   margin: 0.5em;
-  width: calc(50% - 1em);
+  width: 300px;
+  height: 150px;
 }
