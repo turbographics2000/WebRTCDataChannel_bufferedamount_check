@@ -126,7 +126,7 @@ function sendGeneratedData() {
     // throughput quite a bit (setTimeout(fn, 0) can take hundreds of milli-
     // seconds to execute).
     while (sendProgress.value < sendProgress.max) {
-      bufferedAmountSeries.addPoint(new Date(), sendChannel.bufferedAmount);
+      bufferedAmountSeries.addPoint(Date.now(), sendChannel.bufferedAmount);
       bufferedAmountGraph.setDataSeries([bufferedAmountSeries]);
       bufferedAmountGraph.updateEndDate();
       console.log('bufferedAmount', sendChannel.bufferedAmount);
