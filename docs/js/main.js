@@ -129,6 +129,7 @@ function sendGeneratedData() {
       bufferedAmountSeries.addPoint(new Date(), sendChannel.bufferedAmount);
       bufferedAmountGraph.setDataSeries([bufferedAmountSeries]);
       bufferedAmountGraph.updateEndDate();
+      console.log('bufferedAmount', sendChannel.bufferedAmount);
       if (sendChannel.bufferedAmount > bufferFullThreshold) {
         if (usePolling) {
           setTimeout(sendAllData, 250);
