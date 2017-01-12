@@ -126,6 +126,9 @@ function sendGeneratedData() {
     // throughput quite a bit (setTimeout(fn, 0) can take hundreds of milli-
     // seconds to execute).
     while (sendProgress.value < sendProgress.max) {
+      bufferedAmountSeries.addPoint(new Date(), sendChannel.bufferedAmount);
+      bufferedAmountGraph.setDataSeries([bufferedAmountSeries]);
+      bufferedAmountGraph.updateEndDate();
       if (sendChannel.bufferedAmount > bufferFullThreshold) {
         if (usePolling) {
           setTimeout(sendAllData, 250);
@@ -136,9 +139,6 @@ function sendGeneratedData() {
       }
       sendProgress.value += chunkSize;
       sendChannel.send(stringToSendRepeatedly);
-      bufferedAmountSeries.addPoint(new Date(), sendChannel.bufferedAmount);
-      bufferedAmountGraph.setDataSeries([bufferedAmountSeries]);
-      bufferedAmountGraph.updateEndDate();
     }
   };
   setTimeout(sendAllData, 0);
